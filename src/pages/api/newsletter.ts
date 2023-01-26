@@ -9,7 +9,7 @@ type ResponseEmailNewsletter =
       message: string;
     };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseEmailNewsletter>
 ) {
@@ -32,6 +32,9 @@ export default function handler(
   //     email,
   //   },
   // });
+
+  // await 5 seconds
+  await new Promise((resolve) => setTimeout(resolve, 5000));
 
   console.log(`Newsletter active for ${email}`);
 

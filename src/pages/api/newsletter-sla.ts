@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
 import { Client } from "@upstash/qstash";
 
@@ -31,7 +30,9 @@ export default async function handler(
   const { email } = req.body;
 
   await c.publishJSON({
-    url: `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/newsletter`,
+    url: `${process.env.VERCEL ? "https://" : ""}${
+      process.env.NEXT_PUBLIC_VERCEL_URL
+    }/api/newsletter`,
     body: { email: email },
   });
 
