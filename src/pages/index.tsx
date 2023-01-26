@@ -69,7 +69,8 @@ const Home: NextPage = () => {
             <div className="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer dark:text-gray-300">
               We care about the protection of your data.{" "}
               <a
-                href="#"
+                href="https://github.com/riccardogiorato/qstash-with-nextjs"
+                target="_blank"
                 className="font-medium text-primary-600 dark:text-primary-500 hover:underline"
               >
                 Read our Privacy Policy

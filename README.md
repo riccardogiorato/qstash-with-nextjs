@@ -1,30 +1,21 @@
-# Template with Next.js 13 + Typescript + Tailwind CSS
+# QStash - Next.js
 
-## No Extra packages added, super light version!
+## Why QStash with Next.js?
 
-![](./public/cover.jpg)
+Using QStash with Next.js to achieve Five-Nines SLA for all User Submissions!
 
-This is a [Next.js](https://nextjs.org/) and with [Tailwind CSS](https://tailwindcss.com/)
+## QStash: Never Break a Form Submission Again!
 
-## Getting Started
+QStash is a powerful tool that can help web developers achieve high availability and scalability for their web applications.
 
-First, run the development server:
+It is a message queue and task scheduler designed specifically for serverless runtimes, and it can help to ensure that user submissions are processed quickly and reliably, even in the face of unexpected issues.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `src/pages/index.js`. The page auto-updates as you edit the file.
+One of the key benefits of qStash is that it is 100% serverless, which means that it does not require any stateful connections. This makes it highly scalable and resilient, and it can easily handle large volumes of user submissions without any issues.
 
 ## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+To learn more about QStash, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- QStash official documentation: https://docs.upstash.com/qstash
+- QStash Typescript SDK: https://github.com/upstash/sdk-qstash-ts
+- QStash pricing: https://docs.upstash.com/qstash/pricing
