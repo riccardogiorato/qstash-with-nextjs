@@ -1,5 +1,6 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from "next";
+import { Client } from "@upstash/qstash";
 
 type ResponseEmailNewsletter =
   | {
@@ -9,7 +10,7 @@ type ResponseEmailNewsletter =
       message: string;
     };
 
-export default function handler(
+export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<ResponseEmailNewsletter>
 ) {
@@ -23,17 +24,20 @@ export default function handler(
     return res.status(400).json({ error: "Email is required" });
   }
 
-  // record email in database from req.body.email
+  const c = new Client({
+    token: process.env.QSTASH_TOKEN || "",
+  });
+
   const { email } = req.body;
 
-  // send email to database
-  // prisma.newsletter.create({
-  //   data: {
-  //     email,
-  //   },
-  // });
+  await c.publishJSON({
+    url: `${process.env.NEXT_PUBLIC_VERCEL_URL}/api/newsletter`,
+    body: { email: email },
+  });
 
-  console.log(`Newsletter active for ${email}`);
+  console.log(`Newsletter added to QStash queue for ${email}`);
 
-  res.status(200).json({ message: `Newsletter active for ${email}` });
+  return res
+    .status(200)
+    .json({ message: `Newsletter added to QStash queue for ${email}` });
 }

@@ -6,7 +6,7 @@ const Home: NextPage = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    await fetch("/api/newsletter", {
+    await fetch("/api/newsletter-sla", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
